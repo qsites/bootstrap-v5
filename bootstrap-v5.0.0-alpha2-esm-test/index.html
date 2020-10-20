@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <main class="flex-shrink-0">
+        <div class="container">
+            <h1>Hello, world!</h1>
+            <p class="lead">Bootstrap privides a version of Bootstrap built as ESM (bootstrap.esm.js and
+                bootstrap.esm.min.js) which allows you to 
+                <a href="https://v5.getbootstrap.com/docs/5.0/getting-started/javascript/#using-bootstrap-as-a-module">use 
+                    Bootstrap as a module in your browser</a>.</p>
+
+            <pre>
+    &lt;script type=&quot;module&quot;&gt;
+        import { Toast } from './js/bootstrap.esm.js'
+
+        let toastElement = document.getElementById(&quot;toast&quot;);
+        let toast = new Toast(toastElement);
+
+        let buttonElement = document.getElementById(&quot;button&quot;);
+        buttonElement.addEventListener(&quot;click&quot;, ()=&gt; {
+            toast.show();
+        });        
+    &lt;/script&gt;
+            </pre>
+
+            <button id="button" type="button" class="btn btn-primary">Show toast</button>
+
+            <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="mr-auto">Bootstrap</strong>
+                    <button type="button" class="btn-close" data-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a message from ES6 module.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { Toast } from './js/bootstrap.esm.js'
+
+        let toastElement = document.getElementById("toast");
+        let toast = new Toast(toastElement);
+
+        let buttonElement = document.getElementById("button");
+        buttonElement.addEventListener("click", ()=> {
+            toast.show();
+        });
+        
+    </script>
+</body>
+
+</html>
